@@ -32,5 +32,12 @@ namespace SimpleSignailR.Controllers
             _gymService.RemoveUser();
             return Ok();
         }
+
+        [HttpGet("getusers")]
+        public async Task<IActionResult> GetUsers()
+        {
+            var result = _gymService.GetTotalUsersInGym();
+            return Ok(result);
+        }
     }
 }
